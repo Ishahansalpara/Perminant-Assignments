@@ -1,0 +1,62 @@
+
+.navbar{
+    background-color: #c7d7dc;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    text-decoration: wavy;
+    font-size: larger;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero{
+    background-color: #85a1ab;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.experience{
+    background-color: #6c8c98;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills{
+    background-color: #527986;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.projects{
+    background-color:#476a75;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-align: center;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    background-color:#395660;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-align: center;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
