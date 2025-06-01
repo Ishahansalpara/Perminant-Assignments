@@ -13,8 +13,8 @@ function App() {
       <StatusToggle/>
       <TaskList/>
 <ProfileViewer
-        name="Emily Clark"
-        email="emily@example.com"
+        name="Isha Hansalpara"
+        email="isha18919@gmail.com.com"
         isPremiumUser={true}
       />   
       <Showcase/>

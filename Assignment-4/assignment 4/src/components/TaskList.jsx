@@ -1,66 +1,33 @@
 import React, { useState } from 'react';
 
 const TaskList = () => {
-  const [taskInput, setTaskInput] = useState('');
+  const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
 
   const addTask = () => {
-    if (taskInput.trim() !== '') {
-      setTasks([...tasks, taskInput]);
-      setTaskInput('');
-    }
+    if (task.trim() === '') return;
+    setTasks(prev => [...prev, task.trim()]);
+    setTask('');
   };
 
   const deleteTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
+    setTasks(prev => prev.filter((_, i) => i !== index));
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
-      <h2>📝 Task List</h2>
-
-      <div style={{ marginBottom: '1rem' }}>
-        <input
-          type="text"
-          placeholder="Enter a task"
-          value={taskInput}
-          onChange={(e) => setTaskInput(e.target.value)}
-          style={{ padding: '0.5rem', marginRight: '0.5rem' }}
-        />
-        <button onClick={addTask} style={{ padding: '0.5rem 1rem' }}>
-          Add
-        </button>
-      </div>
-
-      <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
-        {tasks.map((task, index) => (
-          <li
-            key={index}
-            style={{
-              background: '#f0f0f0',
-              marginBottom: '0.5rem',
-              padding: '0.5rem 1rem',
-              borderRadius: '5px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center'
-            }}
-          >
-            {task}
-            <button
-              onClick={() => deleteTask(index)}
-              style={{
-                background: '#ff4d4d',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '0.3rem 0.6rem',
-                cursor: 'pointer'
-              }}
-            >
-              Delete
-            </button>
+    <div style={{ marginBottom: 30 }}>
+      <input
+        type="text"
+        value={task}
+        placeholder="Enter a task"
+        onChange={e => setTask(e.target.value)}
+        style={{ padding: 6, marginRight: 8 }}
+      />
+      <button onClick={addTask}>Add Task</button>
+      <ul style={{ marginTop: 15 }}>
+        {tasks.map((t, i) => (
+          <li key={i} style={{ marginBottom: 6 }}>
+            {t} <button onClick={() => deleteTask(i)}>Delete</button>
           </li>
         ))}
       </ul>

@@ -1,33 +1,26 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 
 const StatusToggle = () => {
-  const [isOnline, setIsOnline] = useState(false);
+  const [status, setStatus] = useState('Online');
 
   const toggleStatus = () => {
-    setIsOnline(!isOnline);
+    setStatus(prev => (prev === 'Online' ? 'Offline' : 'Online'));
   };
 
-  const statusStyle = {
-    padding: '10px',
-    borderRadius: '5px',
-    backgroundColor: isOnline ? '#d4edda' : '#f8d7da',
-    color: isOnline ? '#155724' : '#721c24',
-    border: isOnline ? '1px solid #c3e6cb' : '1px solid #f5c6cb',
-    textAlign: 'center',
-    fontFamily: 'Arial, sans-serif',
-    fontSize: '14px'
+  const color = {
+    color: status === 'Online' ? 'green' : 'red',
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
   };
+
 
   return (
-    <div>
-      <button onClick={toggleStatus}>
-        {isOnline ? 'Go Offline' : 'Go Online'}
-      </button>
-      <div style={statusStyle}>
-        Status: {isOnline ? '✅ Online' : '❌ Offline'}
-      </div>
+    <div style={{ marginBottom: 20 }}>
+      <p style={color}> {status}</p>
+      <button onClick={toggleStatus}>Toggle Status</button>
     </div>
   );
-}
+};
 
 export default StatusToggle;

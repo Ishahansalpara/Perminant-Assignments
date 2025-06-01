@@ -1,60 +1,53 @@
-import React from "react";
-import UserBadge from "./UserBadge";
-import StatusToggle from "./StatusToggle";
-import TaskList from "./TaskList";
-import ProfileViewer from "./ProfileViewer";
+import React from 'react';
+import UserBadge from './UserBadge';
+import StatusToggle from './StatusToggle';
+import TaskList from './TaskList';
+import ProfileViewer from './ProfileViewer';
+
+const CardBox = ({ title, children }) => (
+  <div style={{
+    border: '1px solid #ccc',
+    borderRadius: '12px',
+    padding: '20px',
+    marginBottom: '25px',
+    backgroundColor: '#f9f9f9',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+  }}>
+    <h2 style={{ marginBottom: '15px', color: '#333' }}>{title}</h2>
+    <div>{children}</div>
+  </div>
+);
 
 const Showcase = () => {
-  const galleryStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "2rem",
-    justifyContent: "center",
-    padding: "2rem",
-    fontFamily: "Arial, sans-serif",
-  };
-
-  const sectionStyle = {
-    flex: "1 1 300px",
-    padding: "1rem",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    backgroundColor: "#fdfdfd",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-  };
-
   return (
-    <div style={galleryStyle}>
-      <div style={sectionStyle}>
-        <h2>User Badge 1</h2>
-        <UserBadge name="Alice Johnson" role="Admin" isVerified={true} />
-        <h2>User Badge 2</h2>
-        <UserBadge name="Bob Smith" role="Member" isVerified={false} />
-      </div>
+    <div style={{ 
+      padding: '40px', 
+      fontFamily: 'Segoe UI, sans-serif', 
+      backgroundColor: '#f4f6f8', 
+      minHeight: '100vh' 
+    }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '40px' }}>
+         Showcase
+      </h1>
 
-      <div style={sectionStyle}>
-        <h2>Status Toggle</h2>
-        <StatusToggle />
-      </div>
+      <div style={{ display: 'grid', gap: '30px', gridTemplateColumns: '1fr 1fr' }}>
+        <CardBox title="🧩 UserBadge Examples">
+          <UserBadge name="Isha" role="Admin" isVerified={true} />
+          <UserBadge name="Tisha" role="User" isVerified={false} />
+        </CardBox>
 
-      <div style={sectionStyle}>
-        <h2>Task List</h2>
-        <TaskList />
-      </div>
+        <CardBox title="🔁 Status Toggle">
+          <StatusToggle />
+        </CardBox>
 
-      <div style={sectionStyle}>
-        <h2>Profile Viewer 1</h2>
-        <ProfileViewer
-          name="Emily Clark"
-          email="emily@example.com"
-          isPremiumUser={true}
-        />
-        <h2>Profile Viewer 2</h2>
-        <ProfileViewer
-          name="Tom Lee"
-          email="tom@example.com"
-          isPremiumUser={false}
-        />
+        <CardBox title="📋 Task List Manager">
+          <TaskList />
+        </CardBox>
+
+        <CardBox title="👤 Profile Viewer Variants">
+          <ProfileViewer name="Isha" email="isha18919@gmail.com" isPremiumUser={true} />
+          <ProfileViewer name="Esha" email="23amtics@gmail.com" isPremiumUser={false} />
+        </CardBox>
       </div>
     </div>
   );
