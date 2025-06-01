@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <header>
         <h1>Assignment 2</h1>
-      
+    
       <Toggle />
       <Form />
       </header>
