@@ -27,7 +27,21 @@ const TaskList = () => {
       <ul style={{ marginTop: 15 }}>
         {tasks.map((t, i) => (
           <li key={i} style={{ marginBottom: 6 }}>
-            {t} <button onClick={() => deleteTask(i)}>Delete</button>
+            {t}
+            <button
+              onClick={() => deleteTask(i)}
+              style={{
+                marginLeft: 10,
+                padding: '2px 6px',
+                backgroundColor: '#ff4d4d',
+                color: 'white',
+                border: 'none',
+                borderRadius: 4,
+                cursor: 'pointer',
+              }}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>

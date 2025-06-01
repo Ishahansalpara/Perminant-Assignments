@@ -10,7 +10,7 @@ const CardBox = ({ title, children }) => (
     borderRadius: '12px',
     padding: '20px',
     marginBottom: '25px',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: 'rgb(197, 225, 235)',
     boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
   }}>
     <h2 style={{ marginBottom: '15px', color: '#333' }}>{title}</h2>
@@ -23,7 +23,7 @@ const Showcase = () => {
     <div style={{ 
       padding: '40px', 
       fontFamily: 'Segoe UI, sans-serif', 
-      backgroundColor: '#f4f6f8', 
+      backgroundColor: '#ffffff', 
       minHeight: '100vh' 
     }}>
       <h1 style={{ textAlign: 'center', marginBottom: '40px' }}>
